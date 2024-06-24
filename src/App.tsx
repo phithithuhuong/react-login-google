@@ -1,24 +1,14 @@
-import React from "react";
 import "./App.css";
-import LoginContainer from "./containers/Login";
-import LogoutContainer from "./containers/Logout";
-// class IUser {
-//   name!: string;
-//   email!: string;
-//   imageUrl: string;
-//   googleId: string;
-// }
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PostJobsScreen from "./postJob";
 function App() {
-  // const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  // const [userInfo, setUserInfo] = React.useState<IUser>({
-  //   name: "",
-  //   email: "",
-  // });
   return (
     <div className="App">
-      <h1>Login with Google and Facebook </h1>
-      <LoginContainer />
-      <LogoutContainer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/postJobs" element={<PostJobsScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
